@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class='container'>
+  <header class='jumbotron'>
+    <h1>Find Yourself</h1>
+    <h1>Outside</h1>
+    <p>Our expertly curated campgrounds are blah blah blah.</p>
+    <p><a class='btn-lg btn-primary' href='/campgrounds/new'>Add Campground</a></p>
+
+  </header>
+
+  
+  <div class='row'>
+    <div class='col-lg-12'>
+      <h3>Our Most Popular Sites</h3>
+    </div>
+
+   <% campgrounds.map(campground =>{ %>
+    <div class='col-md-3 col-sm-6'>
+      <div class='thumbnail'>
+        <img src='<%=campground.image%>'>
+        <div class='caption'>
+          <h4><%=campground.name%></h4>
+        </div>
+        <div class='caption'>
+          <a href='/campgrounds/<%= campground._id %>' class= 'btn btn-primary'>More Info</a>
+        </div>
+      </div>
+    </div>
+  <%}) %>
+
+  </div>
+  
+</div>
+
+<% include ../partials/footer %>
